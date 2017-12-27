@@ -1,7 +1,9 @@
 # spec
 Audio spectrum generator using sox 
 
-### Requirements
+**Requirements**
+```
 sox
 curl
 optipng
+```
