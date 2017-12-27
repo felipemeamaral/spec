@@ -6,7 +6,7 @@ api_key=f6c67fcc0af0264
 for f in *.flac *.mpeg *.wav *.aiff *.ogg *.m4a *.aac *.mp4 *.ape *.asf *.wma  ;do
 
   sox "$f" -n spectrogram -o "$f.png" -t "$f"
-  #optipng -quiet "$f.png"
+  optipng -quiet "$f.png"
   response=$(curl -H "Authorization: CLIENT-ID $api_key" -F "image=@$f.png" \
   https://api.imgur.com/3/image.xml 2>/dev/null | tail -n +2 | sed 's/http:/https:/g' )
   
